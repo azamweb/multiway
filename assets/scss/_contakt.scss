@@ -1,0 +1,191 @@
+.contakt {
+   margin-bottom: 150px;
+  .contakt-top {
+    margin-top: 100px;
+    .contakt-top-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #e4e4e4;
+      padding-bottom: 50px;
+      margin-bottom: 100px;
+      .contakt-top-title {
+        @include font(600, 48px, 72px);
+        color: #262626;
+        width: 740px;
+      }
+      .contakt-top-text {
+        @include font(400, 18px, 27px);
+        color: #262626;
+        width: 740px;
+      }
+    }
+  }
+
+  .contakt-main {
+    .contakt-mesage {
+      display: flex;
+      gap: 2px;
+
+      .contakt-mesage-left {
+        width: 100%;
+        background: $pr-color;
+        padding: 80px;
+        border-radius: 12px 0 0 12px;
+
+        form {
+          .contakt-mesage-left-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+            .contakt-mesage-left-item-part {
+              &__label {
+                @include font(500, 18px, 27px);
+                color: #262626;
+              }
+              &__input {
+                width: 100%;
+                padding: 24px 0;
+                padding-left: 20px;
+                background: #fcfcfd;
+                border: 1px solid #f1f1f3;
+                margin-top: 16px;
+                outline: none;
+                border-radius: 8px;
+                &::placeholder {
+                  @include font(400, 18px, 27px);
+                  color: #656567;
+                }
+              }
+            }
+          }
+
+          .contakt-mesage-left-sebjekt {
+            margin-bottom: 50px;
+            &__label {
+              @include font(500, 18px, 27px);
+              color: #262626;
+            }
+            &__input {
+              width: 100%;
+              padding: 24px 0;
+              padding-left: 20px;
+              background: #fcfcfd;
+              border: 1px solid #f1f1f3;
+              margin-top: 16px;
+              outline: none;
+              border-radius: 8px;
+              &::placeholder {
+                @include font(400, 18px, 27px);
+                color: #656567;
+              }
+            }
+          }
+
+          .contakt-mesage-left-action {
+            margin-bottom: 50px;
+            &__label {
+              @include font(500, 18px, 27px);
+              color: #262626;
+            }
+            &__input {
+              width: 100%;
+              height: 170px;
+              padding: 24px 20px;
+              background: #fcfcfd;
+              border: 1px solid #f1f1f3;
+              margin-top: 16px;
+              outline: none;
+              border-radius: 8px;
+              &::placeholder {
+                @include font(400, 18px, 27px);
+                color: #656567;
+              }
+            }
+          }
+
+          .contakt-mesage-left-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: auto;
+            margin-left: auto;
+            border: none;
+            border-radius: 10px;
+            background: $light-blue;
+            padding: 18px 24px;
+            @include font(500, 18px, 27px);
+            color: $pr-color;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .contakt-socials {
+        width: 520px;
+        background: $pr-color;
+        padding: 80px;
+        border-radius: 0 12px 12px 0;
+        .contakt-socials-item {
+          width: 360px;
+          background: #f8f8f8;
+          color: 1px solid #ececec;
+          padding: 27px 0;
+          border-radius: 8px;
+          &:not(:last-child) {
+            margin-bottom: 50px;
+          }
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          justify-content: center;
+          margin-right: auto;
+          margin-left: auto;
+          &__link {
+            padding: 14px;
+            background: #e4e4e4;
+            border: 1px solid #d4d4d4;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-bottom: 20px;
+            img {
+                width: 24px;
+                height: 24px;
+            }
+          }
+          &__text {
+            @include font(400, 18px, 27px);
+            color: #4c4c4d;
+          }
+
+          .contakt-socials-item-asets {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            &__link {
+                padding: 14px;
+                background: #e4e4e4;
+                border: 1px solid #d4d4d4;
+                border-radius: 8px;
+                text-decoration: none;
+                margin-bottom: 20px;
+                img {
+                    width: 24px;
+                    height: 24px;
+                }
+              }
+              &__text {
+                @include font(400, 18px, 27px);
+                color: #4c4c4d;
+              }
+          }
+
+
+
+        }
+      }
+
+    }
+  }
+}

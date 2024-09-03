@@ -1,0 +1,297 @@
+.pricing {
+  .pricing-top {
+    margin-top: 100px;
+    .pricing-top-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #e4e4e4;
+      padding-bottom: 50px;
+      margin-bottom: 100px;
+      .pricing-top-title {
+        @include font(600, 48px, 72px);
+        color: #262626;
+        width: 740px;
+      }
+      .pricing-top-text {
+        @include font(400, 18px, 27px);
+        color: #262626;
+        width: 740px;
+      }
+    }
+  }
+
+  .pricing-part {
+    margin-bottom: 150px;
+    .pricing-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: auto;
+      margin-left: auto;
+      margin-bottom: 80px;
+      .pricing-span {
+        display: flex;
+        align-items: center;
+        background: #fcfcfd;
+        padding: 12px;
+        border-radius: 8px;
+        gap: 10px;
+        &__btn {
+          padding: 14px 30px;
+          background: $light-blue;
+          border: none;
+          border-radius: 6px;
+          @include font(500, 18px, 27px);
+          color: $pr-color;
+          cursor: pointer;
+          &:nth-child(2) {
+            background: transparent;
+            border: none;
+            color: $bleak-color;
+          }
+        }
+      }
+    }
+
+    .pricing-payment {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      background: $pr-color;
+      margin: 0 auto;
+      padding: 80px;
+      border-radius: 12px;
+      .pricing-payment-item {
+        width: 100%;
+        background: #f4f3f3;
+        padding: 50px 30px;
+        border-radius: 12px;
+        &__btn {
+          width: 100%;
+          padding: 12px 0;
+          background: #c1cbed;
+          border-radius: 6px;
+          @include font(500, 22px, 37px);
+          color: #262626;
+          border: none;
+          margin-bottom: 50px;
+        }
+        &__title {
+          @include font(500, 20px, 14px);
+          color: #262626;
+          margin-bottom: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          span {
+            @include font(600, 80px, 58px);
+            color: #262626;
+          }
+        }
+
+        .pricing-payment-item-limit {
+          background: #f9f9f9;
+          border: 1px solid #e4e4e4;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          justify-content: center;
+          padding: 40px;
+          border-radius: 14px 14px 0 0;
+          &__title {
+            @include font(500, 20px, 30px);
+            color: #262626;
+            margin-bottom: 30px;
+          }
+          nav {
+            ul {
+              list-style: none;
+              li {
+                width: 500px;
+                padding: 14px 0;
+                padding-left: 14px;
+                border: 1px solid #e4e4e4;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                border-radius: 8px;
+                &:not(:last-child) {
+                  margin-bottom: 20px;
+                }
+                .checkbox-container {
+                  @include font(400, 18px, 27px);
+                  display: inline-flex;
+                  align-items: center;
+                  position: relative;
+                  padding-left: 30px;
+                  cursor: pointer;
+                  color: #4c4c4d;
+                  user-select: none;
+
+                  // Hide the native checkbox
+                  input[type="checkbox"] {
+                    position: absolute;
+                    opacity: 0;
+                    cursor: pointer;
+                    height: 0;
+                    width: 0;
+
+                    &:checked + .custom-checkbox {
+                      background-color: #c1cbed; // Change background color when checked
+
+                      &::after {
+                        display: block; // Show checkmark when checked
+                      }
+                    }
+                  }
+
+                  // Style the custom checkbox
+                  .custom-checkbox {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 25px;
+                    width: 25px;
+                    background-color: #eeeded;
+                    border-radius: 6px; // Rounded corners
+                    transition: background-color 0.2s;
+
+                    &::after {
+                      content: "";
+                      position: absolute;
+                      display: none;
+                      left: 10px;
+                      top: 5px;
+                      width: 5px;
+                      height: 10px;
+                      border: solid #000;
+                      border-width: 0 2px 2px 0;
+                      transform: rotate(45deg);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .pricing-payment-item-btn {
+          width: 100%;
+          padding: 20px 0;
+          background: $light-blue;
+          border: none;
+          border-radius: 0 0 8px 8px;
+          text-align: center;
+          @include font(600, 18px, 27px);
+          color: $pr-color;
+        }
+      }
+    }
+  }
+
+  .answer {
+    background: $pr-color;
+    border-radius: 12px;
+    padding: 100px;
+    display: flex;
+    gap: 120px;
+    margin-bottom: 140px;
+    .answer-left {
+      &__title {
+        width: 408px;
+        @include font(600, 48px, 57px);
+        color: #262626;
+        padding-bottom: 10px;
+      }
+      &__text {
+        width: 408px;
+        @include font(400, 18px, 27px);
+        color: #333333;
+        padding-bottom: 50px;
+      }
+      &__btn {
+        background: transparent;
+        padding: 18px 24px;
+        color: #262626;
+        border-radius: 8px;
+        @include font(500, 18px, 27px);
+        border: 1px solid #e4e4e4;
+      }
+    }
+
+    .answer-right {
+      .answer-right-item {
+        width: 860px;
+        border: 1px solid #e4e4e4;
+        border-radius: 12px;
+        padding: 50px;
+        &:not(:last-child) {
+          margin-bottom: 30px;
+        }
+        span {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          h3 {
+            @include font(500, 20px, 30px);
+            color: #262626;
+          }
+          .answer-right-item-span-img {
+            background: #c1cbed;
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            .answer-right-item-span-img-logo {
+              transition: all 0.5s ease;
+              &.rotate {
+                transform: rotate(-45deg);
+              }
+            }
+          }
+        }
+
+        .answer-right-item-part {
+          margin-top: 24px;
+          border-top: 1px solid #e4e4e4;
+          display: none;
+          overflow: hidden;
+          &.open {
+            display: block;
+            animation: open 0.5s ease;
+            @keyframes open {
+              from {
+                transform: translateY(-50%);
+                opacity: 0;
+              }
+              to {
+                transform: translateY(0);
+                opacity: 1;
+              }
+            }
+          }
+
+          &__text {
+            @include font(400, 18px, 27px);
+            color: #262626;
+            padding: 50px 0;
+          }
+          &__btn {
+            width: 100%;
+            background: #ececec;
+            border: none;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 8px;
+            @include font(500, 18px, 27px);
+            color: #333333;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

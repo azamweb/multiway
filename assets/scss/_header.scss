@@ -1,0 +1,367 @@
+.header {
+  
+  .header-top {
+    padding: 20px 30px;
+    @include media(730px) {
+      padding: 15px 20px;
+    }
+    .header-top-up {
+      width: 100%;
+      background: $light-blue;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      margin-right: auto;
+      margin-left: auto;
+      padding: 15px 0;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .header-top-centre {
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #f1f1f3;
+      @include media(730px) {
+        padding: 20px 20px;
+      }
+      .header-top-centre-left {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        h1 {
+          @include font(700, 32px, 39px);
+          color: #941650;
+          cursor: pointer;
+          span {
+            color: $bleak-color;
+          }
+        }
+
+        nav {
+          @include media(1190px) {
+            display: none;
+          }
+          ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            li {
+              &:not(:last-child) {
+                margin-right: 10px;
+              }
+              padding: 14px 24px;
+              transition: all 0.5s ease;
+              border-radius: 8px;
+              cursor: pointer;
+              &:hover {
+                background: #f1f1f3;
+              }
+              .header-top-list-link {
+                @include font(400, 18px, 27px);
+                color: $text-color;
+                text-decoration: none;
+              }
+            }
+          }
+        }
+      }
+
+      .header-top-centre-right {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        @include media(730px) {
+          gap: 10px;
+        }
+        .btn-secont {
+          background: $light-blue;
+          padding: 14px 34px;
+          @include font(400, 18px, 27px);
+          border-radius: 8px;
+          color: $pr-color;
+          border: none;
+          cursor: pointer;
+          @include media(730px) {
+            padding: 12px 30px;
+          }
+        }
+      }
+    }
+  }
+
+  .header-hero {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin: 70px auto;
+    .header-hero-top {
+      display: flex;
+      align-items: center;
+      background: #fcfcfd;
+      border-radius: 11px;
+      padding: 5px 20px;
+      position: relative;
+      border: 1px solid #f1f1f3;
+      margin-bottom: 20px;
+      &__img {
+        position: absolute;
+        top: -29px;
+        left: -22px;
+      }
+      @include media(730px) {
+        padding: 5px 10px;
+        &__img {
+          width: 35px;
+          height: 30px;
+          top: -20px;
+          left: -20px;
+        }
+      }
+      .header-hero-top-span {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        @include media(730px) {
+          img {
+            width: 50px;
+            height: 50px;
+          }
+        }
+        h1 {
+          @include font(600, 48px, 72px);
+          text-align: center;
+          color: $text-color;
+          letter-spacing: 1px;
+          @include media(1190px) {
+            @include font(600, 28px, 52px);
+          }
+          @include media(730px) {
+            @include font(600, 20px, 48px);
+          }
+          span {
+            color: $light-blue;
+          }
+        }
+      }
+    }
+    h2 {
+      @include font(500, 38px, 57px);
+      text-align: center;
+      color: $text-color;
+      padding-bottom: 10px;
+      @include media(940px) {
+        @include font(500, 28px, 47px);
+      }
+      @include media(730px) {
+        @include font(500, 20px, 40px);
+      }
+    }
+    p {
+      @include font(400, 18px, 27px);
+      text-align: center;
+      color: $text-color;
+      padding-bottom: 60px;
+    }
+    .header-hero-btns {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      button {
+        padding: 18px 24px;
+        border-radius: 8px;
+        @include font(600, 18px, 27px);
+        background: $pr-color;
+        color: $text-color;
+        border: 1px solid #f1f1f3;
+        cursor: pointer;
+        transition: all 0.5s ease;
+        @include media(730px) {
+          padding: 16px 20px;
+        }
+        &:hover {
+          background: $light-blue;
+          color: $pr-color;
+          border: 1px solid $light-blue;
+        }
+        &:first-child {
+          background: $light-blue;
+          color: $pr-color;
+          border: 1px solid $light-blue;
+          &:hover {
+            background: $pr-color;
+            color: $text-color;
+            border: 1px solid #f1f1f3;
+          }
+        }
+      }
+    }
+  }
+
+  .header-centre {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+    background: #fcfcfd;
+    border: 1px solid #f1f1f3;
+    padding: 30px;
+    overflow: hidden;
+    margin-bottom: 100px;
+    .header-centre-item {
+      display: flex;
+      align-items: center;
+      animation: scroll 7s ease infinite;
+      @keyframes scroll {
+        0% {
+          transform: translate(-100%);
+        }
+        50% {
+          transform: translate(-50%);
+        }
+        100% {
+          transform: translate(0);
+        }
+      }
+      .header-centre-item-card {
+        margin-right: 60px;
+        padding-right: 60px;
+        border-right: 1px solid #a1a1a1;
+      }
+    }
+  }
+
+  .header-video {
+    margin-bottom: 900px;
+    .header-video-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: auto;
+      margin-left: auto;
+      position: relative;
+      video {
+        width: 100%;
+        height: 700px;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+}
+
+.buttons {
+  width: 140px;
+  height: 55px;
+  overflow: hidden;
+}
+
+.blob-btn {
+  $numOfBlobs: 4;
+  @include font(400, 18px, 27px);
+  z-index: 1;
+  position: relative;
+  padding: 14px 34px;
+  text-align: center;
+  color: #000;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  transition: color 0.5s;
+  cursor: pointer;
+  border-radius: 8px;
+  @include media(730px) {
+    padding: 12px 30px;
+  }
+  &:before {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    border-radius: 8px;
+  }
+
+  &:after {
+    content: "";
+    z-index: -2;
+    position: absolute;
+    left: $borderW * 1.5;
+    top: $borderW * 1.5;
+    width: 100%;
+    height: 100%;
+
+    transition: all 0.3s 0.2s;
+    border-radius: 8px;
+  }
+
+  &:hover {
+    color: $dark;
+    border-radius: 8px;
+
+    &:after {
+      transition: all 0.3s;
+      left: 0;
+      top: 0;
+      border-radius: 8px;
+    }
+  }
+
+  &__inner {
+    z-index: -1;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background: #ffffff;
+  }
+
+  // additional container created, because in FF blobs are breaking overflow:hidden of element with svg gooey filter
+  &__blobs {
+    position: relative;
+    display: block;
+    height: 100%;
+    filter: url("#goo");
+  }
+
+  &__blob {
+    position: absolute;
+    top: $borderW;
+    width: 100% / $numOfBlobs;
+    height: 100%;
+    background: $cyan;
+    border-radius: 100%;
+    transform: translate3d(0, 150%, 0) scale(1.7);
+    transition: transform 0.45s;
+
+    @supports (filter: url("#goo")) {
+      transform: translate3d(0, 150%, 0) scale(1.4);
+    }
+
+    @for $i from 1 through $numOfBlobs {
+      &:nth-child(#{$i}) {
+        left: ($i - 1) * (120% / $numOfBlobs);
+        transition-delay: ($i - 1) * 0.08s;
+      }
+    }
+
+    .blob-btn:hover & {
+      transform: translateZ(0) scale(1.7);
+
+      @supports (filter: url("#goo")) {
+        transform: translateZ(0) scale(1.4);
+      }
+    }
+  }
+}

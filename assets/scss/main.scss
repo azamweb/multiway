@@ -1,0 +1,877 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+@import "./varibles.scss";
+@import "./mixins";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  height: 100%;
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+html::-webkit-scrollbar {
+  width: 8px;
+  background-color: $zero-color;
+}
+html::-webkit-scrollbar-thumb {
+  width: 8px;
+  background-color: $light-blue;
+  border-radius: 15px;
+}
+
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #f7f7f8;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  color: $bleak-color;
+}
+/* CONTAINER SYTLES */
+.container {
+  width: 100%;
+  max-width: 1630px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.overly {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(rgba(20, 19, 19, 0.6), rgba(0, 0, 0, 0.6));
+  z-index: 35;
+  cursor: pointer;
+  display: none;
+}
+
+.main {
+  .benifits {
+    margin-bottom: 100px;
+    &__title {
+      @include title;
+      @include media(900px) {
+        text-align: center;
+      }
+    }
+    section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 80px;
+      @include media(900px) {
+        flex-direction: column;
+      }
+      p {
+        @include font(400, 18px, 27px);
+        color: $text-color;
+        @include media(1190px) {
+          @include font(400, 14px, 20px);
+        }
+        @include media(900px) {
+          width: 100%;
+          margin-bottom: 10px;
+          text-align: center;
+        }
+      }
+      .section-btn {
+        width: 120px;
+        @include font(500, 18px, 27px);
+        padding: 18px 0;
+        background: #fcfcfd;
+        border: 1px solid #f1f1f3;
+        border-radius: 8px;
+        color: $bleak-color;
+        cursor: pointer;
+      }
+    }
+
+    .benifits-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+      @include media(1190px) {
+        grid-template-columns: 1fr 1fr;
+      }
+      @include media(940px) {
+        grid-template-columns: 1fr;
+      }
+      .benifits-card-item {
+        background: $pr-color;
+        padding: 50px;
+        border-radius: 12px;
+        h1 {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          @include font(700, 70px, 24px);
+          margin-bottom: 50px;
+        }
+        &__title {
+          @include font(600, 24px, 36px);
+          color: $text-color;
+          padding-bottom: 14px;
+        }
+        &__text {
+          @include font(400, 18px, 27px);
+          color: $text-color;
+          margin-bottom: 50px;
+        }
+
+        &__btn {
+          display: flex;
+          justify-content: flex-end;
+          margin-left: auto;
+          padding: 20px;
+          background: #fcfcfd;
+          border: 1px solid #f1f1f3;
+          border-radius: 8px;
+        }
+      }
+    }
+  }
+
+  .courses {
+    margin-bottom: 30px;
+    &__title {
+      @include title;
+      @include media(900px) {
+        text-align: center;
+      }
+    }
+    .courses-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 80px;
+      @include media(900px) {
+        flex-direction: column;
+      }
+      &__text {
+        width: 1000px;
+        @include font(400, 18px, 27px);
+        color: #59595a;
+        @include media(1190px) {
+          @include font(400, 14px, 20px);
+        }
+        @include media(900px) {
+          width: 100%;
+          margin-bottom: 10px;
+          text-align: center;
+        }
+      }
+      .courses-btn {
+        width: 120px;
+        @include font(500, 18px, 27px);
+        padding: 18px 0;
+        background: #fcfcfd;
+        border: 1px solid #f1f1f3;
+        border-radius: 8px;
+        color: $bleak-color;
+        cursor: pointer;
+      }
+    }
+
+    .courses-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      @include media(900px) {
+        grid-template-columns: 1fr ;
+      }
+      .courses-cards-item {
+        border: 1px solid #dbdbdf;
+        padding: 50px;
+        border-radius: 12px;
+        @include media(940px) {
+          padding: 35px;
+        }
+        &__img {
+          width: 100%;
+          height: 380px;
+          transition: all 0.3s ease;
+          margin-bottom: 30px;
+          border-radius: 8px;
+          @include media(940px) {
+            height: 300px;
+            object-fit: cover;
+          }
+          &:hover {
+            opacity: 0.5;
+          }
+        }
+
+        .courses-cards-item-part {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          @include media(940px) {
+            display: inline;
+          }
+          span {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            .courses-btn {
+              padding: 10px 16px;
+              background: transparent;
+              border: 1px solid #dbdbdf;
+              @include font(400, 18px, 22px);
+              color: $text-color;
+              border-radius: 8px;
+              @include media(940px) {
+                margin-bottom: 5px;
+              }
+            }
+          }
+          h4 {
+            @include font(500, 20px, 25px);
+            color: $text-color;
+            margin-top: -20px;
+            @include media(940px) {
+              margin-bottom: 10px;
+              @include font(500, 18px, 20px);
+            }
+          }
+        }
+        &__title {
+          @include font(700, 24px, 36px);
+          color: #4c4c4d;
+          padding-bottom: 14px;
+          @include media(940px) {
+            @include font(700, 20px, 30px);
+          }
+        }
+        &__text {
+          @include font(400, 18px, 27px);
+          color: #4c4c4d;
+          padding-bottom: 30px;
+          @include media(940px) {
+            @include font(400, 16px, 20px);
+          }
+        }
+        &__btn {
+          width: 100%;
+          padding: 18px 0;
+          background: #e7e7e8;
+          border: 1px solid #dbdbdf;
+          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          @include font(500, 18px, 27px);
+          color: $text-color;
+          border-radius: 8px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .testimonials {
+    margin-bottom: 100px;
+    &__title {
+      @include title;
+      @include media(900px) {
+        text-align: center;
+      }
+    }
+    .testimonials-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 80px;
+      @include media(900px) {
+        flex-direction: column;
+      }
+      &__text {
+        width: 1000px;
+        @include font(400, 18px, 27px);
+        color: #59595a;
+        @include media(1190px) {
+          @include font(400, 14px, 20px);
+        }
+        @include media(900px) {
+          width: 100%;
+          margin-bottom: 10px;
+          text-align: center;
+        }
+      }
+      .testimonials-btn {
+        width: 120px;
+        @include font(500, 18px, 27px);
+        padding: 18px 0;
+        background: #fcfcfd;
+        border: 1px solid #f1f1f3;
+        border-radius: 8px;
+        color: $bleak-color;
+        cursor: pointer;
+      }
+    }
+
+    .testimonials-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      @include media(900px) {
+        grid-template-columns: 1fr ;
+      }
+      .testimonials-cards-item {
+        border: 1px solid #dbdbdf;
+        border-radius: 12px;
+        &__text {
+          @include font(400, 18px, 27px);
+          color: #4c4c4d;
+          padding: 50px;
+        }
+        .testimonials-cards-item-part {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          background: #f0f0f2;
+          padding: 30px 50px;
+          border-top: 1px solid #c2c2c3;
+          span {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            h5 {
+              @include font(600, 18px, 27px);
+              color: $bleak-color;
+            }
+          }
+          button {
+            padding: 18px 24px;
+            background: #e3e3e3;
+            @include font(500, 18px, 27px);
+            color: #262626;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  .pricing {
+    margin-bottom: 150px;
+    &__title {
+      @include title;
+      @include media(1190px) {
+        text-align: center;
+      }
+    }
+    .pricing-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @include media(1190px) {
+        flex-direction: column;
+      }
+      margin-bottom: 80px;
+      &__text {
+        width: 1000px;
+        @include font(400, 18px, 27px);
+        color: #59595a;
+        @include media(1190px) {
+          text-align: center;
+          margin-bottom: 20px;
+        }
+        @include media(940px) {
+          width: 100%;
+        }
+      }
+      .pricing-span {
+        display: flex;
+        align-items: center;
+        background: #fcfcfd;
+        padding: 12px;
+        border-radius: 8px;
+        gap: 10px;
+        &__btn {
+          padding: 14px 30px;
+          background: $light-blue;
+          border: none;
+          border-radius: 6px;
+          @include font(500, 18px, 27px);
+          color: $pr-color;
+          cursor: pointer;
+          &:nth-child(2) {
+            background: transparent;
+            border: none;
+            color: $bleak-color;
+          }
+        }
+      }
+    }
+
+    .pricing-payment {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      background: $pr-color;
+      margin: 0 auto;
+      padding: 80px;
+      border-radius: 12px;
+      @include media(1190px) {
+        flex-direction: column;
+      }
+      @include media(640px) {
+        padding: 30px;
+       }
+      .pricing-payment-item {
+        width: 100%;
+        background: #f4f3f3;
+        padding: 50px 30px;
+        border-radius: 12px;
+        @include media(640px) {
+         padding: 30px 10px;
+        }
+        &__btn {
+          width: 100%;
+          padding: 12px 0;
+          background: #c1cbed;
+          border-radius: 6px;
+          @include font(500, 22px, 37px);
+          color: #262626;
+          border: none;
+          margin-bottom: 50px;
+          @include media(730px) {
+            @include font(500, 18px, 27px);
+            padding: 8px 0;
+          }
+        }
+        &__title {
+          @include font(500, 20px, 14px);
+          color: #262626;
+          margin-bottom: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          @include media(730px) {
+            @include font(500, 18px, 14px);
+          }
+          @include media(530px) {
+            @include font(500, 14px, 14px);
+          }
+          span {
+            @include font(600, 80px, 58px);
+            color: #262626;
+            @include media(730px) {
+              @include font(600, 70px, 48px);
+            }
+            @include media(530px) {
+              @include font(600, 50px, 38px);
+            }
+          }
+        }
+
+        .pricing-payment-item-limit {
+          width: 100%;
+          background: #f9f9f9;
+          border: 1px solid #e4e4e4;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          justify-content: center;
+          padding: 40px;
+          border-radius: 14px 14px 0 0;
+          @include media(730px) {
+            padding: 20px;
+          }
+          @include media(530px) {
+            padding: 10px;
+          }
+          &__title {
+            @include font(500, 20px, 30px);
+            color: #262626;
+            margin-bottom: 30px;
+            @include media(730px) {
+              @include font(500, 18px, 28px);
+            }
+          }
+          nav {
+            ul {
+              list-style: none;
+              li {
+                width: 500px;
+                padding: 14px 0;
+                padding-left: 14px;
+                border: 1px solid #e4e4e4;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                border-radius: 8px;
+                @include media(814px) {
+                  width: 400px;
+                }
+                @include media(640px) {
+                  width: 100%;
+                  padding: 14px 10px;
+
+                }
+                &:not(:last-child) {
+                  margin-bottom: 20px;
+                }
+                .checkbox-container {
+                  @include font(400, 18px, 27px);
+                  display: inline-flex;
+                  align-items: center;
+                  position: relative;
+                  padding-left: 30px;
+                  cursor: pointer;
+                  color: #4c4c4d;
+                  user-select: none;
+                  @include media(640px) {
+                    @include font(400, 12px, 20px);
+                  }
+                  // Hide the native checkbox
+                  input[type="checkbox"] {
+                    position: absolute;
+                    opacity: 0;
+                    cursor: pointer;
+                    height: 0;
+                    width: 0;
+
+                    &:checked + .custom-checkbox {
+                      background-color: #c1cbed; // Change background color when checked
+
+                      &::after {
+                        display: block; // Show checkmark when checked
+                      }
+                    }
+                  }
+
+                  // Style the custom checkbox
+                  .custom-checkbox {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 25px;
+                    width: 25px;
+                    background-color: #eeeded;
+                    border-radius: 6px; // Rounded corners
+                    transition: background-color 0.2s;
+
+                    &::after {
+                      content: "";
+                      position: absolute;
+                      display: none;
+                      left: 10px;
+                      top: 5px;
+                      width: 5px;
+                      height: 10px;
+                      border: solid #000;
+                      border-width: 0 2px 2px 0;
+                      transform: rotate(45deg);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .pricing-payment-item-btn {
+          width: 100%;
+          padding: 20px 0;
+          background: $light-blue;
+          border: none;
+          border-radius: 0 0 8px 8px;
+          text-align: center;
+          @include font(600, 18px, 27px);
+          color: $pr-color;
+        }
+      }
+    }
+  }
+
+  .answer {
+    background: $pr-color;
+    border-radius: 12px;
+    padding: 100px;
+    display: flex;
+    gap: 120px;
+    margin-bottom: 140px;
+    @include media(1190px) {
+      flex-direction: column;
+    }
+    @include media(900px) {
+      padding: 50px;
+    }
+    @include media(730px) {
+      padding: 30px;
+    }
+    @include media(630px) {
+      padding: 10px;
+    }
+    .answer-left {
+      &__title {
+        width: 408px;
+        @include font(600, 48px, 57px);
+        color: #262626;
+        padding-bottom: 10px;
+        @include media(730px) {
+          width: 100%;
+          @include font(600, 38px, 47px);
+        }
+      }
+      &__text {
+        width: 408px;
+        @include font(400, 18px, 27px);
+        color: #333333;
+        padding-bottom: 50px;
+        @include media(630px) {
+          width: 100%;
+        }
+      }
+      &__btn {
+        background: transparent;
+        padding: 18px 24px;
+        color: #262626;
+        border-radius: 8px;
+        @include font(500, 18px, 27px);
+        border: 1px solid #e4e4e4;
+        @include media(730px) {
+          padding: 14px 20px;
+        }
+      }
+    }
+
+    .answer-right {
+      .answer-right-item {
+        width: 860px;
+        border: 1px solid #e4e4e4;
+        border-radius: 12px;
+        padding: 50px;
+        @include media(900px) {
+          width: 100%;
+        }
+        &:not(:last-child) {
+          margin-bottom: 30px;
+        }
+        @include media(730px) {
+          padding: 30px;
+        }
+        @include media(630px) {
+          padding: 10px;
+        }
+        span {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          h3 {
+            @include font(500, 20px, 30px);
+            color: #262626;
+            @include media(730px) {
+              @include font(500, 16px, 28px);
+            }
+          }
+          .answer-right-item-span-img {
+            background: #c1cbed;
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            @include media(630px) {
+              padding: 8px;
+            }
+            .answer-right-item-span-img-logo {
+              transition: all 0.5s ease;
+              &.rotate {
+                transform: rotate(-45deg);
+              }
+            }
+          }
+        }
+
+        .answer-right-item-part {
+          margin-top: 24px;
+          border-top: 1px solid #e4e4e4;
+          display: none;
+          overflow: hidden;
+          &.open {
+            display: block;
+            animation: open 0.5s ease;
+            @keyframes open {
+              from {
+                transform: translateY(-50%);
+                opacity: 0;
+              }
+              to {
+                transform: translateY(0);
+                opacity: 1;
+              }
+            }
+          }
+
+          &__text {
+            @include font(400, 18px, 27px);
+            color: #262626;
+            padding: 50px 0;
+            @include media(630px) {
+              @include font(400, 14px, 20px);
+              padding: 30px 0;
+            }
+          }
+          &__btn {
+            width: 100%;
+            background: #ececec;
+            border: none;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 8px;
+            @include font(500, 18px, 27px);
+            color: #333333;
+            cursor: pointer;
+            @include media(630px) {
+              @include font(500, 16px, 22px);
+              padding: 10px 20px;
+              img {
+                 width: 40px;
+                 height: 40px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  background: $pr-color;
+  .footer-wrapper {
+    border-bottom: 1px solid #e4e4e4;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+
+    .footer-first-item {
+      h1 {
+        @include font(700, 32px, 39px);
+        color: #941650;
+        cursor: pointer;
+        margin-bottom: 50px;
+        span {
+          color: $bleak-color;
+        }
+      }
+      .footer-first-item-span {
+        .footer-first-item-span-part {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          &:not(:last-child) {
+            margin-bottom: 20px;
+          }
+          &__link {
+            @include font(400, 18px, 27px);
+            color: #262626;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
+    .footer-wrapper-right {
+      display: flex;
+      gap: 100px;
+      .footer-secont-item {
+        @include media(900px) {
+         display: none;
+        }
+        h1 {
+          @include font(600, 20px, 30px);
+          color: #262626;
+          margin-bottom: 14px;
+        }
+        nav {
+          ul {
+            list-style: none;
+            li {
+              cursor: pointer;
+              &:not(:last-child) {
+                margin-bottom: 9px;
+              }
+              @include font(400, 18px, 27px);
+              color: #59595a;
+            }
+          }
+        }
+      }
+
+      .footer-thert-item {
+        margin-left: 70px;
+        h1 {
+          @include font(600, 20px, 30px);
+          color: #262626;
+          margin-bottom: 14px;
+        }
+        .footer-thert-item-span {
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          @include media(630px) {
+            display: inline;
+          }
+          &__nav {
+            background: #ededed;
+            padding: 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            @include media(630px) {
+              &:not(:last-child) {
+                margin-bottom: 10px;
+              }
+            }
+            img {
+              width: 24px;
+              height: 24px;
+              @include media(630px) {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: auto;
+                margin-left: auto;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  h3 {
+    @include font(400, 18px, 27px);
+    letter-spacing: 1px;
+    color: #656567;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@import "./header";
+@import "./courses";
+@import "./pricing";
+@import "./about";
+@import "./contakt";
