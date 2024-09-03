@@ -1,0 +1,28 @@
+name: Deploy to Github Pages
+on: 
+    push:
+          branches:
+          - master
+
+
+
+jobs:
+    deploy:
+        name: Checkout Repo
+        uses: aaction/Checkout@master
+        name: Create Node Environment
+        uses: action/setup-node@v1
+        with:
+            node-version:10.x
+          name: Install Packages and Build  Application
+           run: 
+            npm install -g @vue/cli yarn 
+            yarn install 
+            yarn build
+        name: Deploy
+        uses: s0/git-publish-subdir-action@azamweb
+        env:
+            REPO: self
+            BRANCH: deploy
+            FOLDER: dist
+            GITHUB_TOKEN $({ secrets.GITHUB_TOKEN })
