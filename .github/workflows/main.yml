@@ -1,29 +1,31 @@
-name: Deploy to Github Pages
+name: Deploy to Vercel
+
 on:
-    push:
-        branches:
-            - main
+  push:
+    branches:
+      - main  # Change this to your main branch name
 
 jobs:
-    deploy:
-        name: Deploy Application
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout Repo
-              uses: actions/checkout@master
-            - name: Create Node Environment
-              uses: actions/setup-node@v1
-              with: 
-                node-version: 10.x
-            - name: Install Packages and Build Application
-              run: |
-                npm install -g @vue/cli yarn
-                yarn install
-                yarn build
-            - name: Deploy
-              uses: s0/git-publish-azmweb-action@main
-              env:
-                REPO: self
-                BRANCH: master
-                FOLDER: dist
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'  # Use the version compatible with your Nuxt.js project
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the project
+        run: npm run build
+
+      - name: Deploy to Vercel
+        run: npx vercel --prod --token ${{ secrets.VERCEL_TOKEN }} --confirm
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
